@@ -41,6 +41,42 @@ html {
 }
 
 /* ==========================================================================
+ Layout
+========================================================================== */
+
+
+body {
+
+	margin: 0;
+
+}
+
+main {
+	margin: 5rem auto;
+	max-width: 45rem;
+}
+
+section {
+	margin: auto 2rem;
+}
+
+
+figure {
+	margin: auto 0;
+}
+
+
+@media (min-width: 600px) {
+
+	html {
+
+		--ratio: 1.3;
+
+	}
+
+}
+
+/* ==========================================================================
  Typography
 ========================================================================== */
 
@@ -69,21 +105,9 @@ html {
 
 }
 
-body {
-
-	--margin-standard: 0;
-
-	margin: var(--margin-standard);
-}
-
-main {
-	margin: 5rem auto;
-	max-width: 40rem;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
-	margin: 1.5em auto .25em;
+	margin: 1.5em auto .5em;
 }
 
 h1, h2, h3 {
@@ -108,8 +132,8 @@ h3 {
 
 
 h4 {
-	font-size: var(--size-subhead-small);
-	font-weight: 700px;
+	font-size: var(--size-subhead-medium);
+	font-weight: 700;
 	color: var(--color-blue);
 }
 
@@ -121,30 +145,14 @@ h6 {
 	font-size: var(--size-subsection);
 }
 
-section {
-	margin: auto 2rem;
-}
-
-
-figure {
-	margin: auto 0;
-}
 
 p {
 	margin-top: 0;
 }
 
-li{
-	list-style-type: none;
-}
-
 a {
 	color: var(--color-red);
 	text-decoration: none;
-}
-
-a:visited {
-	color: var(--color-red-dark);
 }
 
 a:active {
@@ -159,6 +167,7 @@ a:hover, a:focus {
 blockquote {
 	color: var(--color-beige);
 	background-color: var(--color-brown);
+	border-radius: 2.5rem;
 	font-size: var(--size-subsection);
 	font-weight: 700;
 	padding: 2rem;
@@ -170,23 +179,105 @@ cite {
 	letter-spacing: .15rem;
 }
 
-.recipe-style {
+/** List Styles **/
+
+ul, ol {
+	padding: 0;
+}
+
+ol,  ul {
+	font-weight: 700;
+	margin: .5rem 0;
+}
+
+ol li {
+	font-weight: 700;
+	list-style-type: lower-roman;
+}
+
+ol li li {
+	color: var(--color-gold);
+	font-size: var(--size-mini);
+	margin-left: 2rem;
+}
+
+li{
+	list-style-type: none;
+}
+
+ul li li {
+	color: var(--color-blue-dark);
+	font-size: var(--size-mini);
+	font-weight: normal;
+	list-style-type: circle;
+	margin-left: 2rem;
+}
+
+ul div, ul p {
+	font-weight: normal;
+}
+
+li h1, li h2, li h3, li h4, li h5, li h6 {
+	margin: 0 auto 3rem;
+}
+
+
+/** Font Styles & Examples **/
+
+.item-descriptor {
+	font-size: .75rem;
+	text-transform: uppercase;
+	color: var(--color-blue-dark);
+	margin-top: 1.5rem;
+}
+
+.subdescriptor {
+	font-size: var(--size-micro);
+}
+
+.primary-font {
+	font-family: var(--font-primary);
+	font-size: var(--size-subhead-medium);
+}
+
+.secondary-font {
+	font-family: var(--font-secondary);
+	font-size: var(--size-subhead-medium);
+}
+
+.subsection {
+	font-family: var(--font-secondary);
+	font-size: var(--size-subsection);
+}
+
+.dominant {
+	font-size: var(--size-subsection);
+	font-weight: 700;
+}
+
+
+.dominant-base {
+	font-weight: 700;
+}
+
+.mini-body {
+	font-size: var(--size-mini);
+}
+
+.micro-body{
+	font-size: var(--size-micro);
+}
+
+
+/** Recipe Webpage Title **/
+
+.recipe-logo {
 	background-color: var(--color-blue-dark);
 	border: 15px dashed var(--color-blue);
+	border-radius: 2rem;
 	display: inline-block;
 	padding: 2rem;
 	
-}
-
-
-@media (min-width: 600px) {
-
-html {
-
---ratio: 1.3;
-
-}
-
 }
 
 
@@ -210,30 +301,9 @@ header li {
 	margin-top: 1.25rem;
 }
 
-header a {
-	background-color: var(--color-red);
-	border-radius: .9rem;
-	color: var(--color-beige);
-	font-weight: 700;
-	padding: .5rem 1rem;
+header .primary-button {
+	margin: .2rem;
 }
-
-header a:visited {
-	background-color: var(--color-red-dark);
-	color: var(--color-beige);
-}
-
-header a:hover, header a:focus{
-	background-color: var(--color-blue);
-	color: var(--color-brown);
-	text-decoration: none;
-}
-
-header a:active {
-	background-color: var(--color-gold);
-}
-
-
 
 /* ==========================================================================
  Footer Component
@@ -245,95 +315,154 @@ footer {
 	padding: 2rem;
 }
 
+
 /* ==========================================================================
-Examples
+ Button Link Component
 ========================================================================== */
 
-.font-descriptor {
-	font-size: .75rem;
-	text-transform: uppercase;
-	color: var(--color-blue-dark);
-	margin-top: 1.5rem;
-}
-
-.primary-font {
-	font-family: var(--font-primary);
-	font-size: var(--size-subhead-medium);
-}
-
-.secondary-font {
-	font-family: var(--font-secondary);
-	font-size: var(--size-subhead-medium);
-}
-
-.main-headline {
-	font-family: var(--font-secondary);
-	font-size: var(--size-main-headline);
-}
-
-.sub-headline {
-	font-family: var(--font-secondary);
-	font-size: var(--size-sub-headline);
-}
-
-.subhead-large {
-	font-family: var(--font-secondary);
-	font-size: var(--size-subhead-large);
-}
-
-.subhead-medium {
-	font-size: var(--size-subhead-medium);
-	font-weight: 700;
-}
-
-.subhead-small {
-	font-size: var(--size-subhead-small);
+ .primary-button, .secondary-button, .tertiary-button, .primary-button-hover, .primary-button-active, .primary-button-no-click, .secondary-button-hover, .secondary-button-active, .secondary-button-no-click, .tertiary-button-hover, .tertiary-button-active, .tertiary-button-no-click {
+	background-color: var(--color-red);
+	border-radius: .9rem;
+	color: var(--color-beige);
+	display: inline-block;
+	margin: 1rem 2rem;
+	padding: .7rem 1.5rem;
 	
 }
 
-.subsection {
-	font-family: var(--font-secondary);
-	font-size: var(--size-subsection);
+.secondary-button {
+	background-color: var(--color-blue);
+	transition: all .5s;
 }
 
-.feature {
-	font-size: var(--size-subsection);
+.tertiary-button {
+	border: 3px solid var(--color-brown);
+	background-color: transparent;
+	color: var(--color-brown);
+	transition: all .5s;
+}
+
+.primary-button:hover, .secondary-button:hover, .tertiary-button:hover, .primary-button-hover:hover, .primary-button-active:hover, .primary-button-no-click:hover, .secondary-button-hover:hover, .secondary-button-active:hover, .secondary-button-no-click:hover, .tertiary-button-hover:hover, .tertiary-button-active:hover, .tertiary-button-no-click:hover {
+	text-decoration: none;
+}
+
+/** Static examples of various link states **/
+
+.primary-button-hover {
+	background-color: var(--color-red-dark);
+}
+
+.primary-button-active, .secondary-button-active, .tertiary-button-active {
+	background-color: var(--color-gold);
+}
+
+.secondary-button-hover {
+	background-color: var(--color-blue-dark);
+	padding: .9rem 1.75rem;
+}
+
+.tertiary-button-hover {
+	background-color: var(--color-brown);
+}
+
+.primary-button-no-click, .secondary-button-no-click {
+	background-color: var(--color-beige-dark);
+
+}
+
+.tertiary-button-no-click {
+	border: 3px solid var(--color-beige-dark);
+	background-color: transparent;
+	color: var(--color-beige-dark);
+}
+
+/** Actual link states **/
+
+.primary-button:hover, .primary-button:focus {
+	animation: bounce .65s;
+	background-color: var(--color-red-dark);
+}
+
+.secondary-button:hover, .secondary-button:focus {
+	background-color: var(--color-blue-dark);
+	transform: scale(1.1);
+	transition: all .5s;
+}
+
+.tertiary-button:hover, .tertiary-button:focus {
+	background-color: var(--color-brown);
+	color: var(--color-beige);
+	transition: all .5s;
+}
+
+.primary-button:active, .secondary-button:active, .tertiary-button:active{
+	background-color: var(--color-gold);
+	border: none;
+	color: var(--color-beige);
+	
+}
+
+@keyframes bounce {
+	 0% {
+    transform: scale(1,1) translate(0px, 0px);
+ 	 }
+  
+  	30%{
+    transform: scale(1,0.8) translate(0px, 10px); 
+ 	 }
+
+  	75%{
+    transform: scale(1,1.1) translate(0px, -20px); 
+  	}
+  
+ 	100% {
+    transform: scale(1,1) translate(0px, 0px);
+ 	 }
+}
+
+
+/* ==========================================================================
+Accordion Component
+========================================================================== */
+
+summary {
 	font-weight: 700;
+	list-style-image: url(images/right-arrow.svg);
+}
+
+summary:focus {
+	outline: none;
+}
+
+summary::-webkit-details-marker {
+	background: url(images/right-arrow.svg);
+	color: transparent;
+}
+
+details {
+	background-color: var(--color-blue);
+	border-radius: 1.5rem;
+	color: var(--color-beige);
+	margin-bottom: .25rem;
+	padding: 2rem 2rem 1rem;
+	
+}	
+
+details[open] summary::-webkit-details-marker {
+	background: url(images/down-arrow.svg);
+}
+
+details div {
+	background-color: var(--color-beige-light);
+	border-radius: 1.5rem;
+	color: var(--color-brown-dark);
+	padding: 2rem 2rem 1rem;
+	
 }
 
 
-.highlighted-base {
-	font-weight: 700;
-}
 
-.mini-body {
-	font-size: var(--size-mini);
-}
 
-.micro-body{
-	font-size: var(--size-micro);
-}
-
-.list-example {
-	list-style-type: lower-roman;
-	font-weight: 700;
-}
-
-.list-example li {
-	list-style-type: circle;
-	font-weight: normal;
-
-}
-
-.list-example ol, .list-example2 ul {
-	font-size: var(--size-mini);
-	font-weight: normal;
-	margin: .5rem 0;
-}
-
-.list-example2 {
-	font-weight: 700;
-}
 
 
 
