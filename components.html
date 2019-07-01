@@ -35,12 +35,12 @@
 		<figure>
 
 			<div class="item-descriptor">Primary Button</div>
-			<div class="subdescriptor">Default, Hover/Focus, Active, Not Clickable</div>
+			<div class="subdescriptor">Default, Hover/Focus, Active, Disabled</div>
 
 			<a class="primary-button">Button</a>
 			<a class="primary-button-hover">Button</a>
 			<a class="primary-button-active">Button</a>
-			<a class="primary-button-no-click">Button</a>
+			<a class="primary-button-disabled">Button</a>
 				
 		</figure>
 
@@ -48,12 +48,12 @@
 		<figure>
 						
 			<div class="item-descriptor">Secondary Button</div>
-			<div class="subdescriptor">Default, Hover/Focus, Active, Not Clickable</div>
+			<div class="subdescriptor">Default, Hover/Focus, Active, Disabled</div>
 
 			<a class="secondary-button">Button</a>
 			<a class="secondary-button-hover">Button</a>
 			<a class="secondary-button-active">Button</a>
-			<a class="secondary-button-no-click">Button</a>
+			<a class="secondary-button-disabled">Button</a>
 
 		</figure>
 
@@ -61,57 +61,86 @@
 		<figure>
 						
 			<div class="item-descriptor">Tertiary Button</div>
-			<div class="subdescriptor">Default, Hover/Focus, Active, Not Clickable</div>
+			<div class="subdescriptor">Default, Hover/Focus, Active, Disabled</div>
 						
 			<a class="tertiary-button">Button</a>
 			<a class="tertiary-button-hover">Button</a>
 			<a class="tertiary-button-active">Button</a>
-			<a class="tertiary-button-no-click">Button</a>
+			<a class="tertiary-button-disabled">Button</a>
 
 		</figure>
 		
 	
 		<h2>Accordions</h2>	
 
-		<details> 
+		<figure>
 
-			<summary>Why did the students eat their homework?</summary>
+			<details> 
 
-			<div>
+				<summary>Sugar Cookie Recipe</summary>
 
-				<p>Because the teacher said it was a piece of cake.</p>
+				<div>
 
-			</div>	
+					<p>Ingredients: 2 3/4 cups all-purpose flour1 teaspoon baking soda1/2 teaspoon baking powder1 cup butter, softened 1 1/2 cups white sugar1 egg 1 teaspoon vanilla extract</p>
 
-		</details>
+					<p>Preheat oven to 375 degrees F (190 degrees C). In a small bowl, stir together flour, baking soda, and baking powder. Set aside.
+					In a large bowl, cream together the butter and sugar until smooth. Beat in egg and vanilla. Gradually blend in the dry ingredients. Roll rounded teaspoonfuls of dough into balls, and place onto ungreased cookie sheets.
+					Bake 8 to 10 minutes in the preheated oven, or until golden. Let stand on cookie sheet two minutes before removing to cool on wire racks.</p>
 
-		<details> 
+				</div>	
 
-			<summary>What kind of bear has no teeth?</summary>
+			</details>
 
-			<div>
+			<details> 
 
-				<p>A gummy bear!</p>
+				<summary>Angel Food Cake Recipe</summary>
 
-			</div>	
+				<div>
 
-		</details>
+					<p>Ingredients: 1 1/4 cups cake flour1 3/4 cups white sugar1/4 teaspoon salt1 1/2 cups egg whites 1 teaspoon cream of tartar1/2 teaspoon vanilla extract1/2 teaspoon almond extract.</p>
 
-		<details> 
+					<p>Beat egg whites until they form stiff peaks, and then add cream of tartar, vanilla extract, and almond extract. Sift together flour, sugar, and salt. Repeat five times. Gently combine the egg whites with the dry ingredients, and then pour into an ungreased 10 inch tube pan. Place cake pan in a cold oven. Turn the oven on; set it to 325 degrees F (165 degrees C). Cook for about one hour, or until cake is golden brown. Invert cake, and allow it to cool in the pan. When thoroughly cooled, remove from pan. </p>
 
-			<summary>What was the most popular candy on the Titanic?</summary>
+				</div>	
 
-			<div>
+			</details>
 
-				<p>A life-saver!</p>
+			<details> 
 
-			</div>	
+				<summary>Chocolate Fudge Recipe</summary>
 
-		</details>
+				<div>
+
+					<p>Ingredients: 3 cups semi-sweet chocolate chips1 (14 ounce) can Sweetened Condensed Milk Dash salt3/4 cup chopped nuts (optional)1 1/2 teaspoons vanilla extract</p>
+
+					<p>In heavy saucepan, over low heat, melt chocolate chips with sweetened condensed milk and salt. Remove from heat; stir in nuts (optional) and vanilla. Spread evenly into wax-paper-lined 8- or 9-inch square pan. Chill 2 hours or until firm. Lift fudge out of pan and place onto cutting board; peel off paper and cut into squares. Store covered in refrigerator.</p>
+
+				</div>	
+
+			</details>
+
+		</figure>
 
 
+		<h2>Modal Dialog</h2>	
+
+		<figure>
+			
+			<button id="open-modal" type="button">Open Modal</button>
+
+			<dialog id="modal-demo">
+
+				<h3>Here is a Heading</h3>
+
+				<p>Candy canes chocolate bar pie cupcake jujubes tootsie roll. Cheesecake cupcake fruitcake croissant topping chupa chups croissant pastry. Bear claw powder candy gummi bears biscuit. Topping dragée sugar plum cupcake tiramisu jelly-o biscuit icing. Cookie tiramisu jelly-o muffin bear claw marzipan jelly beans cotton candy cookie. Candy canes halvah jelly-o.</p>
 				
-		<h3>Display Headings</h3>
+				<a class="secondary-button">Button</a>
+				<a class="secondary-button-disabled">Button</a>
+
+			</dialog>	
+
+		</figure>	
+
 		
 	</main>
 
@@ -134,6 +163,26 @@
 		<p>Copyright © 2019</p>
 
 	</footer>
+
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+
+		const modal = document.querySelector('dialog');
+		const open = document.getElementById('open-modal');
+
+		open.addEventListener('click', () => {
+		modal.showModal();
+		});
+
+		modal.addEventListener('click', event => {
+		if (event.target === modal) {
+		modal.close('cancelled');
+		}
+		});
+
+		});
+	</script>
 
 
 </body>

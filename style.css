@@ -320,7 +320,7 @@ footer {
  Button Link Component
 ========================================================================== */
 
- .primary-button, .secondary-button, .tertiary-button, .primary-button-hover, .primary-button-active, .primary-button-no-click, .secondary-button-hover, .secondary-button-active, .secondary-button-no-click, .tertiary-button-hover, .tertiary-button-active, .tertiary-button-no-click {
+ .primary-button, .secondary-button, .tertiary-button, .primary-button-hover, .primary-button-active, .primary-button-disabled, .secondary-button-hover, .secondary-button-active, .secondary-button-disabled, .tertiary-button-hover, .tertiary-button-active, .tertiary-button-disabled {
 	background-color: var(--color-red);
 	border-radius: .9rem;
 	color: var(--color-beige);
@@ -339,44 +339,12 @@ footer {
 	border: 3px solid var(--color-brown);
 	background-color: transparent;
 	color: var(--color-brown);
-	transition: all .5s;
+	transition: all .5s ease-in;
 }
 
-.primary-button:hover, .secondary-button:hover, .tertiary-button:hover, .primary-button-hover:hover, .primary-button-active:hover, .primary-button-no-click:hover, .secondary-button-hover:hover, .secondary-button-active:hover, .secondary-button-no-click:hover, .tertiary-button-hover:hover, .tertiary-button-active:hover, .tertiary-button-no-click:hover {
+.primary-button:hover, .secondary-button:hover, .tertiary-button:hover, .primary-button-hover:hover, .primary-button-active:hover, .primary-button-disabled:hover, .secondary-button-hover:hover, .secondary-button-active:hover, .secondary-button-disabled:hover, .tertiary-button-hover:hover, .tertiary-button-active:hover, .tertiary-button-disabled:hover {
 	text-decoration: none;
 }
-
-/** Static examples of various link states **/
-
-.primary-button-hover {
-	background-color: var(--color-red-dark);
-}
-
-.primary-button-active, .secondary-button-active, .tertiary-button-active {
-	background-color: var(--color-gold);
-}
-
-.secondary-button-hover {
-	background-color: var(--color-blue-dark);
-	padding: .9rem 1.75rem;
-}
-
-.tertiary-button-hover {
-	background-color: var(--color-brown);
-}
-
-.primary-button-no-click, .secondary-button-no-click {
-	background-color: var(--color-beige-dark);
-
-}
-
-.tertiary-button-no-click {
-	border: 3px solid var(--color-beige-dark);
-	background-color: transparent;
-	color: var(--color-beige-dark);
-}
-
-/** Actual link states **/
 
 .primary-button:hover, .primary-button:focus {
 	animation: bounce .65s;
@@ -392,7 +360,7 @@ footer {
 .tertiary-button:hover, .tertiary-button:focus {
 	background-color: var(--color-brown);
 	color: var(--color-beige);
-	transition: all .5s;
+	transition: all .5s ease-in;
 }
 
 .primary-button:active, .secondary-button:active, .tertiary-button:active{
@@ -404,19 +372,23 @@ footer {
 
 @keyframes bounce {
 	 0% {
-    transform: scale(1,1) translate(0px, 0px);
+   		transform: scale(1,1)
+   		translate(0px, 0px);
  	 }
   
   	30%{
-    transform: scale(1,0.8) translate(0px, 10px); 
+    	transform: scale(1,0.8)
+    	translate(0px, 10px); 
  	 }
 
   	75%{
-    transform: scale(1,1.1) translate(0px, -20px); 
+    	transform: scale(1,1.1)
+    	translate(0px, -20px); 
   	}
   
  	100% {
-    transform: scale(1,1) translate(0px, 0px);
+    	transform: scale(1,1)
+    	translate(0px, 0px);
  	 }
 }
 
@@ -437,6 +409,7 @@ summary:focus {
 summary::-webkit-details-marker {
 	background: url(images/right-arrow.svg);
 	color: transparent;
+	background-repeat: no-repeat;
 }
 
 details {
@@ -444,12 +417,13 @@ details {
 	border-radius: 1.5rem;
 	color: var(--color-beige);
 	margin-bottom: .25rem;
-	padding: 2rem 2rem 1rem;
+	padding: 1rem;
 	
 }	
 
 details[open] summary::-webkit-details-marker {
 	background: url(images/down-arrow.svg);
+	background-repeat: no-repeat;
 }
 
 details div {
@@ -460,7 +434,104 @@ details div {
 	
 }
 
+/* ==========================================================================
+Modal Dialog Component
+========================================================================== */
 
+dialog {
+	background-color: var(--color-beige-light);
+	border-radius: 2rem;
+	border: 2rem solid var(--color-brown);
+	max-width: 50%;
+	padding: 0;
+}	
+
+
+ dialog h3 {
+ 	background-color: var(--color-beige);
+ 	color: var(--color-blue);
+ 	margin-top: 0;
+ 	padding: 2rem 1rem 1rem;
+ 	
+ }
+
+ dialog p {
+ 	padding: 1rem;
+ }
+
+ dialog .secondary-button, dialog .secondary-button-disabled {
+ 	margin: 1rem;
+ }
+
+ dialog[open]{
+	animation: jump-up .75s;
+ }
+
+ dialog::backdrop {
+ 	background-color: rgba(248, 238, 224, .65);
+ 	background-image: url(images/candy-pattern.svg);
+ }
+
+
+ @keyframes jump-up {
+	0% {
+		opacity: 0;
+		transform: scale(1,1)
+		translate(0px, 600px);
+ 	 }
+  
+  	30%{
+   		transform: scale(1, .75)
+    	translate(0px, -400px);
+ 	 }
+
+  	75%{
+  		opacity: 1;
+   		transform: scale(1, 1.08)
+    	translate(0px, 0px); 
+  	}
+  
+ 	100% {
+ 		
+   		transform: scale(1,1)
+   		translate(0px, 0px);
+ 	 }
+ }
+
+
+/* ==========================================================================
+ Examples
+========================================================================== */
+
+/** Static examples of various Button link states Primary, Secondary, and Tertiary **/
+
+.primary-button-hover {
+	background-color: var(--color-red-dark);
+}
+
+.primary-button-active, .secondary-button-active, .tertiary-button-active {
+	background-color: var(--color-gold);
+}
+
+.secondary-button-hover {
+	background-color: var(--color-blue-dark);
+	padding: .9rem 1.75rem;
+}
+
+.tertiary-button-hover {
+	background-color: var(--color-brown);
+}
+
+.primary-button-disabled, .secondary-button-disabled {
+	background-color: var(--color-beige-dark);
+
+}
+
+.tertiary-button-disabled {
+	border: 3px solid var(--color-beige-dark);
+	background-color: transparent;
+	color: var(--color-beige-dark);
+}
 
 
 
