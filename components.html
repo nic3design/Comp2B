@@ -130,16 +130,118 @@
 
 			<dialog id="modal-demo">
 
-				<h3>Here is a Heading</h3>
+				<div>
 
-				<p>Candy canes chocolate bar pie cupcake jujubes tootsie roll. Cheesecake cupcake fruitcake croissant topping chupa chups croissant pastry. Bear claw powder candy gummi bears biscuit. Topping dragée sugar plum cupcake tiramisu jelly-o biscuit icing. Cookie tiramisu jelly-o muffin bear claw marzipan jelly beans cotton candy cookie. Candy canes halvah jelly-o.</p>
-				
-				<a class="secondary-button">Button</a>
-				<a class="secondary-button-disabled">Button</a>
+					<h3>Here is a Heading</h3>
+
+					<p>Candy canes chocolate bar pie cupcake jujubes tootsie roll. Cheesecake cupcake fruitcake croissant topping chupa chups croissant pastry. Bear claw powder candy gummi bears biscuit. Topping dragée sugar plum cupcake tiramisu jelly-o biscuit icing. Cookie tiramisu jelly-o muffin bear claw marzipan jelly beans cotton candy cookie. Candy canes halvah jelly-o.</p>
+					
+					<a class="secondary-button">Button</a>
+					<a class="secondary-button-disabled">Button</a>
+
+				</div>
 
 			</dialog>	
 
 		</figure>	
+
+		<h2>Form Inputs</h2>
+
+		<figure>
+
+			<div class="item-descriptor">Example Sign Up</div>
+		
+			<form action="#">
+
+				<div>
+
+					<h2>Sign Up</h2>
+
+					<label for="name">First Name</label>
+					<input type="text" id="name" name="name" placeholder="First Name">
+
+
+					<label for="name">Last Name</label>
+					<input type="text" id="name" name="name" class="error" placeholder="Last Name">
+					<p class="error-text">example error message</p>
+
+					<label for="address">Address</label>
+					<input type="text" id="address" name="address" placeholder="Address" disabled>
+				
+					<label for="state">State</label>
+					<select id="state" name="region">
+						<option disabled hidden selected>Please Select</option>
+						<option value="Alabama">AL</option>
+						<option value="Alaska">AK</option>
+						<option value="Arkansas">AR</option>
+						<option value="Arizona">AZ</option>>
+					</select>
+			
+					<label for="zip">Zip Code</label>
+					<input type="number" id="zip" name="post-code">
+					
+					<label for="email">Email Address</label>
+					<input type="email" id="email" name="email" placeholder="youremail@example.com">
+
+					<label for="message">Special Message</label>
+		       		<textarea disabled id="message" name="message" placeholder="Tell us what you think" ></textarea>
+					<p class="helper-text">Maximum of 250 characters</p>
+		        
+		        	<input type="submit">
+
+	        	</div>
+
+        	</form>
+
+		</figure>
+
+		<figure>
+
+			<div class="item-descriptor">Example Upload</div>
+		
+			<form action="#">
+
+				<div>
+
+					<h2>Upload Post</h2>
+
+					
+					<label for="recipe-name">Recipe Name</label>
+					<input type="text" id="recipe-name" name="recipe-name" required placeholder="Recipe Name">
+					
+
+					<label for="category">Category</label>
+					<select id="category" name="category" class="error" required>
+						<option disabled hidden selected>Please Select</option>
+						<option value="Cakes">Cakes</option>
+						<option value="Cookies">Cookies</option>
+						<option value="Breads & Pastries">Breads & Patries</option>
+						<option value="Candies & Confections">Candies & Confections</option>
+						<option value="Custards & Pies">Custards & Pies</option>
+					</select>
+					
+					<p class="error-text">example error message</p>
+		       	
+					<label for="upload" >Upload Your File Here</label>
+					<input type="file" id="upload" name="upload">
+		        
+		        	<input type="submit">
+
+	        	</div>
+
+        	</form>
+
+		</figure>
+
+		<h2>Submit / Button</h2>
+
+		<figure>
+			
+			<input type="submit">
+
+			<button type="button">Open Modal</button>
+
+		</figure>
 
 		
 	</main>

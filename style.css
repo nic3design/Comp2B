@@ -320,7 +320,7 @@ footer {
  Button Link Component
 ========================================================================== */
 
- .primary-button, .secondary-button, .tertiary-button, .primary-button-hover, .primary-button-active, .primary-button-disabled, .secondary-button-hover, .secondary-button-active, .secondary-button-disabled, .tertiary-button-hover, .tertiary-button-active, .tertiary-button-disabled {
+ .primary-button, .secondary-button, .tertiary-button {
 	background-color: var(--color-red);
 	border-radius: .9rem;
 	color: var(--color-beige);
@@ -342,24 +342,25 @@ footer {
 	transition: all .5s ease-in;
 }
 
-.primary-button:hover, .secondary-button:hover, .tertiary-button:hover, .primary-button-hover:hover, .primary-button-active:hover, .primary-button-disabled:hover, .secondary-button-hover:hover, .secondary-button-active:hover, .secondary-button-disabled:hover, .tertiary-button-hover:hover, .tertiary-button-active:hover, .tertiary-button-disabled:hover {
-	text-decoration: none;
-}
 
 .primary-button:hover, .primary-button:focus {
 	animation: bounce .65s;
 	background-color: var(--color-red-dark);
+	text-decoration: none;
 }
 
 .secondary-button:hover, .secondary-button:focus {
 	background-color: var(--color-blue-dark);
+	text-decoration: none;
 	transform: scale(1.1);
 	transition: all .5s;
+
 }
 
 .tertiary-button:hover, .tertiary-button:focus {
 	background-color: var(--color-brown);
 	color: var(--color-beige);
+	text-decoration: none;
 	transition: all .5s ease-in;
 }
 
@@ -373,22 +374,22 @@ footer {
 @keyframes bounce {
 	 0% {
    		transform: scale(1,1)
-   		translate(0px, 0px);
+   		translate(0, 0);
  	 }
   
   	30%{
     	transform: scale(1,0.8)
-    	translate(0px, 10px); 
+    	translate(0, 10px); 
  	 }
 
   	75%{
     	transform: scale(1,1.1)
-    	translate(0px, -20px); 
+    	translate(0, -20px); 
   	}
   
  	100% {
     	transform: scale(1,1)
-    	translate(0px, 0px);
+    	translate(0, 0);
  	 }
 }
 
@@ -418,7 +419,6 @@ details {
 	color: var(--color-beige);
 	margin-bottom: .25rem;
 	padding: 1rem;
-	
 }	
 
 details[open] summary::-webkit-details-marker {
@@ -430,7 +430,8 @@ details div {
 	background-color: var(--color-beige-light);
 	border-radius: 1.5rem;
 	color: var(--color-brown-dark);
-	padding: 2rem 2rem 1rem;
+	margin-top: 1rem;
+	padding: 1.5rem;
 	
 }
 
@@ -439,24 +440,26 @@ Modal Dialog Component
 ========================================================================== */
 
 dialog {
-	background-color: var(--color-beige-light);
+	background-color: var(--color-beige);
 	border-radius: 2rem;
-	border: 2rem solid var(--color-brown);
-	max-width: 50%;
+	border: 1rem solid var(--color-brown);
+	max-width: 80%;
 	padding: 0;
-}	
-
+}
 
  dialog h3 {
- 	background-color: var(--color-beige);
- 	color: var(--color-blue);
+ 	background-color: var(--color-red);
+ 	border-radius: 2rem;
+ 	color: var(--color-beige-light);
  	margin-top: 0;
  	padding: 2rem 1rem 1rem;
- 	
  }
 
- dialog p {
+ dialog div {
+ 	background-color: var(--color-beige);
+ 	border-radius: 2rem;
  	padding: 1rem;
+
  }
 
  dialog .secondary-button, dialog .secondary-button-disabled {
@@ -464,7 +467,7 @@ dialog {
  }
 
  dialog[open]{
-	animation: jump-up .75s;
+	animation: jump-up .85s ease-out;
  }
 
  dialog::backdrop {
@@ -476,27 +479,129 @@ dialog {
  @keyframes jump-up {
 	0% {
 		opacity: 0;
-		transform: scale(1,1)
-		translate(0px, 600px);
+		transform: scale(1, 1)
+		translate(0, 600px);
  	 }
   
   	30%{
    		transform: scale(1, .75)
-    	translate(0px, -400px);
+    	translate(0, -400px);
  	 }
 
   	75%{
   		opacity: 1;
    		transform: scale(1, 1.08)
-    	translate(0px, 0px); 
+    	translate(0, 0); 
   	}
   
  	100% {
  		
    		transform: scale(1,1)
-   		translate(0px, 0px);
+   		translate(0, 0);
  	 }
  }
+
+@media (min-width: 600px) {
+	
+	dialog {
+		max-width: 50%;
+	}
+}
+
+
+/* ==========================================================================
+Forms Component
+========================================================================== */
+
+form {
+	background-color: var(--color-blue);
+	border: 2rem solid var(--color-blue);
+	border-radius: 2rem;
+	color: var(--color-brown);
+	margin-top: 1rem;
+}
+
+form div {
+	background-color: var(--color-beige-light);
+	border-radius: 1.5rem;
+	padding-top: 1rem;
+}
+
+form h2 {
+	margin: 2rem;
+}
+
+form input, form text, select, p {
+	display: block;
+	margin: 0 2rem 1rem;
+	padding: .2rem;
+}
+
+
+form label {
+	font-weight: 700;
+	display: block;
+	margin: .25rem 2rem .15rem;
+}
+
+input:focus, select:focus, textarea:focus {
+	box-shadow: 3px 3px var(--color-gold);
+	outline: none;
+}
+
+form textarea {
+	display: block;
+	min-height: 10rem;
+	min-width: 25rem;
+	margin: 0 2rem;
+	padding: .2rem;
+}
+
+
+.error {
+	border-color: var(--color-red);
+}
+
+.error-text {
+	background-color: var(--color-red);
+	color: var(--color-beige-light);
+	padding: .5rem;
+}
+
+.helper-text {
+	font-size: var(--size-mini);
+}
+
+/* ==========================================================================
+ Submit / Button Components
+========================================================================== */
+
+input[type=submit], button {
+	background-color: var(--color-red);
+	border-radius: 1.25rem;
+	color: var(--color-beige);
+	display: inline-block;
+	font-family: var(--font-secondary);
+	font-size: var(--size-subsection);
+	font-weight: normal;
+	margin: 2rem;
+	padding: .7rem 1.5rem;
+}
+
+
+input[type=submit]:hover, button:hover{
+	background-color: var(--color-blue);
+	
+}
+
+input[type=submit]:focus, button:focus {
+	box-shadow: 3px 3px var(--color-gold);
+	outline: none;
+}
+
+input[type=submit]:active, button:active {
+	background-color: var(--color-gold);
+}
 
 
 /* ==========================================================================
@@ -504,6 +609,15 @@ dialog {
 ========================================================================== */
 
 /** Static examples of various Button link states Primary, Secondary, and Tertiary **/
+
+.primary-button-hover, .primary-button-active, .primary-button-disabled, .secondary-button-hover, .secondary-button-active, .secondary-button-disabled, .tertiary-button-hover, .tertiary-button-active, .tertiary-button-disabled {
+	background-color: var(--color-red);
+	border-radius: .9rem;
+	color: var(--color-beige);
+	display: inline-block;
+	margin: 1rem 2rem;
+	padding: .7rem 1.5rem;
+}
 
 .primary-button-hover {
 	background-color: var(--color-red-dark);
