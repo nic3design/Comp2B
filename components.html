@@ -149,42 +149,37 @@
 
 		<figure>
 
-			<div class="item-descriptor">Example Sign Up</div>
+			<div class="item-descriptor">Example Form</div>
 		
 			<form action="#">
 
 				<div>
 
-					<h2>Sign Up</h2>
+					<h2>Form Title</h2>
 
-					<label for="name">First Name</label>
-					<input type="text" id="name" name="name" placeholder="First Name">
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" placeholder="placeholder text">
 
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" placeholder="placeholder text">
 
-					<label for="name">Last Name</label>
-					<input type="text" id="name" name="name" class="error" placeholder="Last Name">
-					<p class="error-text">example error message</p>
+					
 
-					<label for="address">Address</label>
-					<input type="text" id="address" name="address" placeholder="Address" disabled>
 				
-					<label for="state">State</label>
-					<select id="state" name="region">
+					<label for="option">Select Option</label>
+					<select id="option" name="option">
 						<option disabled hidden selected>Please Select</option>
-						<option value="Alabama">AL</option>
-						<option value="Alaska">AK</option>
-						<option value="Arkansas">AR</option>
-						<option value="Arizona">AZ</option>>
+						<option value="#">Option 1</option>
+						<option value="#">Option 2</option>
+						<option value="#">Option 3</option>
+						<option value="#">Option 4</option>
+						<option value="#">Option 5</option>
 					</select>
 			
-					<label for="zip">Zip Code</label>
-					<input type="number" id="zip" name="post-code">
-					
-					<label for="email">Email Address</label>
-					<input type="email" id="email" name="email" placeholder="youremail@example.com">
+
 
 					<label for="message">Special Message</label>
-		       		<textarea disabled id="message" name="message" placeholder="Tell us what you think" ></textarea>
+		       		<textarea id="message" name="message" placeholder="Tell us what you think" ></textarea>
 					<p class="helper-text">Maximum of 250 characters</p>
 		        
 		        	<input type="submit">
@@ -197,33 +192,124 @@
 
 		<figure>
 
-			<div class="item-descriptor">Example Upload</div>
+			<div class="item-descriptor">Focus State</div>
 		
 			<form action="#">
 
 				<div>
 
-					<h2>Upload Post</h2>
+					<h2>Form Title</h2>
 
-					
-					<label for="recipe-name">Recipe Name</label>
-					<input type="text" id="recipe-name" name="recipe-name" required placeholder="Recipe Name">
-					
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" class="form-focus-state" placeholder="placeholder text">
 
-					<label for="category">Category</label>
-					<select id="category" name="category" class="error" required>
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" class="form-focus-state" placeholder="placeholder text">
+
+				
+					<label for="option">Select Option</label>
+					<select id="option" name="option" class="form-focus-state" >
 						<option disabled hidden selected>Please Select</option>
-						<option value="Cakes">Cakes</option>
-						<option value="Cookies">Cookies</option>
-						<option value="Breads & Pastries">Breads & Patries</option>
-						<option value="Candies & Confections">Candies & Confections</option>
-						<option value="Custards & Pies">Custards & Pies</option>
+						<option value="#">Option 1</option>
+						<option value="#">Option 2</option>
+						<option value="#">Option 3</option>
+						<option value="#">Option 4</option>
+						<option value="#">Option 5</option>
 					</select>
+			
+
+					<label for="message">Special Message</label>
+		       		<textarea id="message" name="message" class="form-focus-state" placeholder="Tell us what you think" ></textarea>
+					<p class="helper-text">Maximum of 250 characters</p>
+		        
+		        	<input type="submit">
+
+	        	</div>
+
+        	</form>
+
+		</figure>
+
+		<figure>
+
+			<div class="item-descriptor">Disabled States</div>
+		
+			<form action="#">
+
+				<div>
+
+					<h2>Form Title</h2>
+
+					
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" placeholder="placeholder text" disabled>
+
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" placeholder="placeholder text" disabled>
+
+					<label for="name">Last Name</label>
+					<input type="text" id="name" name="name" placeholder="Last Name" disabled>
+
+
+					<label for="option">Select Option</label>
+					<select id="option" name="option" disabled>
+						<option disabled hidden selected>Please Select</option>
+						<option value="#">Option 1</option>
+						<option value="#">Option 2</option>
+						<option value="#">Option 3</option>
+						<option value="#">Option 4</option>
+						<option value="#">Option 5</option>
+					</select>
+
+					<label for="message">Special Message</label>
+		       		<textarea disabled id="message" name="message" placeholder="Tell us what you think" ></textarea>
+					<p class="helper-text">Maximum of 250 characters</p>
+		        
+		        	<input type="submit" class="submit-disabled">
+
+	        	</div>
+
+        	</form>
+
+		</figure>
+
+		<figure>
+
+			<div class="item-descriptor">Error States</div>
+		
+			<form action="#">
+
+				<div>
+
+					<h2>Form Title</h2>
+
+					
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" class="error" placeholder="placeholder text">
+
+					<p class="error-text">example error message</p>
+
+					<label for="name">Label</label>
+					<input type="text" id="name" name="name" class="error" placeholder="placeholder text">
 					
 					<p class="error-text">example error message</p>
-		       	
-					<label for="upload" >Upload Your File Here</label>
-					<input type="file" id="upload" name="upload">
+
+					<label for="option">Select Option</label>
+					<select id="option" name="option" class="error">
+						<option disabled hidden selected>Please Select</option>
+						<option value="#">Option 1</option>
+						<option value="#">Option 2</option>
+						<option value="#">Option 3</option>
+						<option value="#">Option 4</option>
+						<option value="#">Option 5</option>
+					</select>
+			
+					<p class="error-text">example error message</p>
+
+					<label for="message">Special Message</label>
+		       		<textarea disabled id="message" name="message" placeholder="Tell us what you think"class="error"></textarea>
+					<p class="helper-text">Maximum of 250 characters</p>
+					<p class="error-text">example error message</p>
 		        
 		        	<input type="submit">
 
@@ -237,13 +323,201 @@
 
 		<figure>
 			
+			<div class="item-descriptor">Example Submit and Button</div>
+
 			<input type="submit">
 
 			<button type="button">Open Modal</button>
 
 		</figure>
 
+		<figure>
+			
+			<div class="item-descriptor">Hover/Focus State</div>
+
+			<input type="submit" class="submit-hover">
+
+			<button type="button" class="primary-button-hover" >Open Modal</button>
+
+		</figure>
+
+		<figure>
+			
+			<div class="item-descriptor">Active State</div>
+
+			<input type="submit" class="submit-active">
+
+			<button type="button" class="primary-button-active" >Open Modal</button>
+
+		</figure>
+
+		<figure>
+			
+			<div class="item-descriptor">Disabled State</div>
+
+			<input type="submit" class="submit-disabled">
+
+			<button type="button" class="primary-button-disabled" >Open Modal</button>
+
+		</figure>
+
+
+		<h2>Information Cards</h2>
+
+		<div class="item-descriptor">Article / Post Example</div>
 		
+		<figure>
+
+			<section class="card-post">
+
+				<div class="card-cover">
+
+					<h2>Recipe Title</h2>
+
+					<h6>Published on 7/15/19</h6>
+
+				</div>
+
+				<div class="card-content">
+
+					<div class="card-links">
+				
+						<div class="details">
+
+							<a href="#"><img src="images/cookie.svg" width="50px" alt="Cookie"><p>Details</p></a>
+
+						</div>
+
+						<div class="download-post">
+						
+							<a href="#"><p>Download</p><img src="images/download.svg" alt="Download"></a>
+
+						</div>
+
+					</div>	
+
+					<div class="card-description">
+						
+						<p class="card-excerpt-title">Ingredients</p>
+
+						<p>Excerpt text showing list of some or all the ingredients here</p>
+
+						<p class="card-excerpt-title">User Rating</p>
+
+						<div>
+							<img src="images/star.svg" alt="Rating" width="17px">
+							<img src="images/star.svg" alt="Rating" width="17px">
+							<img src="images/star.svg" alt="Rating" width="17px">
+							<img src="images/star.svg" alt="Rating" width="17px">
+							<img src="images/half-star.svg" alt="Rating" width="17px">
+						</div>
+
+					</div>
+				
+				</div>
+
+			</section>
+		</figure>	
+
+		<div class="item-descriptor">Profile Example</div>
+		
+		<figure>
+
+			<section class="profile-post">
+
+			<div class="profile-info" >
+				
+				<p class="card-excerpt-title">Firstname Lastname</p>
+
+				<p>Job Title Description</p>
+
+				<div>
+					<img src="images/mail.svg" alt="Email" width="20px">
+					<a href="#"><p>emailaddress@email.com</p></a>
+				</div>
+
+				<div>
+					<img src="images/phone.svg" alt="Phone" width="20px">
+					<a href="#"><p>1 (432) 123-4567</p></a>
+				</div>
+
+
+			</div>
+
+			<div class="profile-images">
+
+				<img src="images/profile.png" alt="Profile Picture" width="200px">
+
+				<div class="social-icons">
+
+					<a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+
+					<a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+
+					<a href="#"><img src="images/insta.png" alt="Instagram"></a>
+
+				</div>
+
+			</div>
+
+			</section>
+
+		</figure>	
+
+
+		<h2>Notifications</h2>
+
+		<div class="item-descriptor">Neutral Message</div>
+
+		<section class="neutral-note">
+			
+			<img src="images/notifications/info.svg" alt="Info">
+
+			<p>This is a neutral notification just informing you of something.</p>
+
+		</section>
+
+
+		<div class="item-descriptor">Success Message</div>
+
+		<section class="success-note">
+		
+			<img src="images/notifications/check-mark.svg" alt="Success">
+
+			<p>This is a success notification telling you everything is great!</p>
+
+		</section>
+
+		<div class="item-descriptor">Warning Message</div>
+
+		<section class="warning-note">
+		
+			<img src="images/notifications/exclamation.svg" alt="Warning">
+			<div>
+				<p>This is a warning notification. Err on the side of caution.</p>
+				<div>
+					<a class="tertiary-button">Button</a>
+					<a class="tertiary-button">Button</a>
+				</div>
+			</div>
+
+		</section>
+
+		<div class="item-descriptor">Error Message</div>
+
+		<section class="error-note">
+		
+			<img src="images/notifications/ban-sign.svg" alt="Failed">
+			<div>
+				<p>This is an error notification. Looks like something went wrong.</p>
+				<div>
+					<a class="tertiary-button">Button</a>
+					<a class="tertiary-button">Button</a>
+				</div>
+			</div>
+
+		</section>
+
 	</main>
 
 	<footer>

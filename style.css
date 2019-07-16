@@ -65,7 +65,6 @@ figure {
 	margin: auto 0;
 }
 
-
 @media (min-width: 600px) {
 
 	html {
@@ -515,7 +514,7 @@ Forms Component
 
 form {
 	background-color: var(--color-blue);
-	border: 2rem solid var(--color-blue);
+	border: 1rem solid var(--color-blue);
 	border-radius: 2rem;
 	color: var(--color-brown);
 	margin-top: 1rem;
@@ -531,14 +530,15 @@ form h2 {
 	margin: 2rem;
 }
 
-form input, form text, select, p {
+input, select, form p {
+	border-radius: .75rem;
 	display: block;
 	margin: 0 2rem 1rem;
-	padding: .2rem;
+	padding: .5rem;
 }
 
 
-form label {
+label {
 	font-weight: 700;
 	display: block;
 	margin: .25rem 2rem .15rem;
@@ -549,27 +549,46 @@ input:focus, select:focus, textarea:focus {
 	outline: none;
 }
 
-form textarea {
+textarea {
+	border-radius: 1.5rem;
 	display: block;
-	min-height: 10rem;
-	min-width: 25rem;
-	margin: 0 2rem;
-	padding: .2rem;
+	min-width: 20rem;
+	min-height: 15rem;
+	margin: 1rem 2rem 0;
+	padding: .5rem;
 }
 
 
 .error {
-	border-color: var(--color-red);
+	border-color: var(--color-red-light);
 }
 
 .error-text {
-	background-color: var(--color-red);
+	background-color: var(--color-red-light);
 	color: var(--color-beige-light);
 	padding: .5rem;
 }
 
 .helper-text {
 	font-size: var(--size-mini);
+}
+
+.focus-state {
+	box-shadow: 3px 3px var(--color-gold);
+	outline: none;
+}
+
+
+@media (min-width: 600px){
+	
+	textarea{
+		min-height: 10rem;
+		min-width: 25rem;
+	}
+
+	form {
+	border: 2rem solid var(--color-blue);
+	}
 }
 
 /* ==========================================================================
@@ -590,7 +609,7 @@ input[type=submit], button {
 
 
 input[type=submit]:hover, button:hover{
-	background-color: var(--color-blue);
+	background-color: var(--color-red-dark);
 	
 }
 
@@ -602,6 +621,292 @@ input[type=submit]:focus, button:focus {
 input[type=submit]:active, button:active {
 	background-color: var(--color-gold);
 }
+
+.submit-hover[type=submit] {
+	background-color: var(--color-red-dark);
+}
+
+.submit-active[type=submit] {
+	background-color: var(--color-gold);
+}
+
+
+
+/* ==========================================================================
+Card Components
+========================================================================== */
+
+/** Recipe Card/ Blog Card **/
+
+.card-post {
+	max-width: 25rem;
+}
+
+.card-cover {
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/caramel-pecan-fudge.jpg) no-repeat bottom;
+	background-size: cover;
+	border-radius: 2rem 2rem 0 0;
+	padding: 9rem 1rem .5rem 1rem;
+}
+
+.card-cover h2, .card-cover h6 {
+	padding: 0;
+	margin: 0;
+}
+
+.card-cover h6 {
+	color: var(--color-blue);
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column-reverse;
+	background-color: var(--color-beige-light);
+}
+
+.card-content a:hover {
+	text-decoration: none;
+	color: var(--color-beige-light);
+}
+
+.card-description {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.card-links {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.details, .card-description, .download-post {
+	padding: 1rem;
+}
+
+.details {
+	align-items: center;
+	background-color: var(--color-gold);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1rem 5.75rem;
+}
+
+.details:hover {
+	background-color: var(--color-red);
+}
+
+.card-excerpt-title {
+	font-family: var(--font-secondary);
+	font-size: var(--size-subsection);
+	margin: 0;
+}
+
+.download-post a {
+	display: flex;
+	flex-direction: column;
+}
+
+.details a{
+	display: flex;
+	align-items: center;
+}
+
+.details p, .download-post p {
+	margin: 0;
+}
+
+.details p {
+	padding-left: .5rem;
+}
+
+.download-post:hover {
+	background-color: var(--color-blue);
+}
+
+@media (min-width: 600px) {
+
+	.card-post {
+		max-width: 45rem;
+	}
+		.card-content {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.card-links {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.details {
+		padding: 1rem;
+	}
+
+	.details p {
+		padding-left: 0;
+	}
+
+	.details a, .download-post a {
+		display: flex;
+		flex-direction: column;
+	}
+
+
+}
+
+/**========================== Profile Card ==========================**/
+
+.profile-post {
+	border-bottom: 1rem solid var(--color-red);
+	border-radius: 2rem 2rem 0 0;
+	background-color: var(--color-beige-light);
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	max-width: 20rem;
+}
+
+.profile-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.profile-info div {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	padding-bottom: .5rem;
+}
+
+.profile-info div p {
+	margin: 0;
+}
+
+.profile-info img {
+	padding-right: .5rem;
+}
+
+.profile-images {
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-images img {
+	margin: auto;
+}
+
+.social-icons {
+	align-items: center;
+	background-color: var(--color-blue-light);
+	display: flex;
+	justify-content: space-around;
+	padding: .5rem 1rem;
+}
+
+
+@media (min-width: 600px) {
+	.profile-post {
+		border-radius: 2rem 0 0 2rem;
+		display: flex;
+		flex-direction: row;
+		max-width: 35rem;
+	}
+
+	.profile-info {
+		text-align: left;
+	}
+
+	.social-icons {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/* ==========================================================================
+Notifications
+========================================================================== */
+
+.neutral-note {
+	background-color: var(--color-beige-light);
+}
+
+.success-note {
+	background-color: var(--color-blue-light);
+}
+
+.warning-note {
+	background-color: var(--color-gold-light);
+}
+
+.error-note {
+	background-color: var(--color-red-light);
+}
+
+.neutral-note, .success-note, .warning-note, .error-note {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 1rem;
+}
+
+.neutral-note img {
+	background-color: var(--color-beige-dark);
+
+}
+
+.success-note img {
+	background-color: var(--color-blue);
+	
+}
+
+.warning-note div {
+	display: flex;
+	flex-direction: column;
+}
+
+.warning-note div div {
+	display: flex;
+	flex-direction: row;
+}
+
+.warning-note a, .error-note a {
+	padding: 0 1rem;
+	margin-right: .2rem;
+}
+
+
+.error-note img, .warning-note img, .success-note img, .neutral-note img {
+	border-radius: 1rem 0 0 1rem;
+	padding: 2rem;
+	height: 3rem;
+}
+
+.warning-note img {
+	background-color: var(--color-gold);
+	padding: 3rem 2rem;
+}
+
+.error-note img {
+	background-color: var(--color-red);
+	padding: 3rem 2rem;
+}
+
+
+.error-note p, .warning-note p, .success-note p, .neutral-note p {
+	padding-left: 2rem;
+	margin: 0;
+}
+
+@media (min-width: 600px){
+	.error-note img, .warning-note img {
+		padding: 2rem 2rem;
+	}
+}
+
 
 
 /* ==========================================================================
@@ -648,10 +953,26 @@ input[type=submit]:active, button:active {
 }
 
 
+/** Focus State For Form **/
+
+.form-focus-state {
+	box-shadow: 3px 3px var(--color-gold);
+	outline: none;
+}
+
+
+/** States for Submit Button **/	
 
 
 
-	
+.submit-hover[type=submit] {
+	background-color: var(--color-red-dark);
+}
 
+.submit-active[type=submit] {
+	background-color: var(--color-gold);
+}
 
-
+.submit-disabled[type=submit] {
+	background-color: var(--color-beige-dark);
+}
