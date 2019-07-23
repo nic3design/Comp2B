@@ -368,11 +368,11 @@
 		
 		<figure>
 
-			<section class="card-post">
+			<div class="card-post">
 
-				<div class="card-cover">
+				<div class="card-cover first-post">
 
-					<h2>Recipe Title</h2>
+					<h3>Fondant that Doesn't Taste Like Rubber</h3>
 
 					<h6>Published on 7/15/19</h6>
 
@@ -381,86 +381,67 @@
 				<div class="card-content">
 
 					<div class="card-links">
-				
-						<div class="details">
 
-							<a href="#"><img src="images/cookie.svg" width="50px" alt="Cookie"><p>Details</p></a>
+							<a href="#" class="details" title="Details">
+								<img src="images/cookie.svg" alt="Cookie">
+							</a>
 
-						</div>
-
-						<div class="download-post">
 						
-							<a href="#"><p>Download</p><img src="images/download.svg" alt="Download"></a>
-
-						</div>
+							<a href="#" class="download-post" title="Download">
+								<img src="images/download.svg" alt="Download">
+							</a>
 
 					</div>	
 
-					<div class="card-description">
-						
-						<p class="card-excerpt-title">Ingredients</p>
+					<p>Ingredients and or excerpt text here</p>
 
-						<p>Excerpt text showing list of some or all the ingredients here</p>
-
-						<p class="card-excerpt-title">User Rating</p>
-
-						<div>
-							<img src="images/star.svg" alt="Rating" width="17px">
-							<img src="images/star.svg" alt="Rating" width="17px">
-							<img src="images/star.svg" alt="Rating" width="17px">
-							<img src="images/star.svg" alt="Rating" width="17px">
-							<img src="images/half-star.svg" alt="Rating" width="17px">
-						</div>
-
-					</div>
-				
 				</div>
 
-			</section>
+			</div>
 		</figure>	
 
 		<div class="item-descriptor">Profile Example</div>
 		
 		<figure>
 
-			<section class="profile-post">
+			<div class="profile-post">
 
-			<div class="profile-info" >
+				<div class="profile-info" >
+					
+					<p class="card-excerpt-title">Firstname Lastname</p>
+
+					<p>Job Title Description</p>
+
+					<div>
+						<img src="images/mail.svg" alt="Email">
+						<p><a href="#">emailaddress@email.com</a></p>
+					</div>
+
+					<div>
+						<img src="images/phone.svg" alt="Phone">
+						<p><a href="#">1 (432) 123-4567</a></p>
+					</div>
+
+				</div>
 				
-				<p class="card-excerpt-title">Firstname Lastname</p>
 
-				<p>Job Title Description</p>
+				<div class="profile-images">
 
-				<div>
-					<img src="images/mail.svg" alt="Email" width="20px">
-					<a href="#"><p>emailaddress@email.com</p></a>
-				</div>
+					<img class="profile-headshot" src="images/profile.png" alt="Profile Picture">
 
-				<div>
-					<img src="images/phone.svg" alt="Phone" width="20px">
-					<a href="#"><p>1 (432) 123-4567</p></a>
-				</div>
+					<div class="social-icons">
 
+						<a href="#"><img src="images/facebook.png" alt="Facebook"></a>
 
-			</div>
+						<a href="#"><img src="images/twitter.png" alt="Twitter"></a>
 
-			<div class="profile-images">
+						<a href="#"><img src="images/insta.png" alt="Instagram"></a>
 
-				<img src="images/profile.png" alt="Profile Picture" width="200px">
-
-				<div class="social-icons">
-
-					<a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-
-					<a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-
-					<a href="#"><img src="images/insta.png" alt="Instagram"></a>
+					</div>
 
 				</div>
 
 			</div>
-
-			</section>
 
 		</figure>	
 
@@ -469,54 +450,70 @@
 
 		<div class="item-descriptor">Neutral Message</div>
 
-		<section class="neutral-note">
-			
-			<img src="images/notifications/info.svg" alt="Info">
+		<figure>
 
-			<p>This is a neutral notification just informing you of something.</p>
+			<div class="neutral-note">
+				
+				<img src="images/notifications/info.svg" alt="Info">
 
-		</section>
+				<p>This is a neutral notification just informing you of something.</p>
+
+			</div>
+
+		</figure>
 
 
 		<div class="item-descriptor">Success Message</div>
 
-		<section class="success-note">
-		
-			<img src="images/notifications/check-mark.svg" alt="Success">
+		<figure>
 
-			<p>This is a success notification telling you everything is great!</p>
+			<div class="success-note">
+			
+				<img src="images/notifications/check-mark.svg" alt="Success">
 
-		</section>
+				<p>This is a success notification telling you everything is great!</p>
+
+			</div>
+
+		</figure>
 
 		<div class="item-descriptor">Warning Message</div>
 
-		<section class="warning-note">
-		
-			<img src="images/notifications/exclamation.svg" alt="Warning">
-			<div>
-				<p>This is a warning notification. Err on the side of caution.</p>
+		<figure>
+
+			<div class="warning-note">
+			
+				<img src="images/notifications/exclamation.svg" alt="Warning">
 				<div>
-					<a class="tertiary-button">Button</a>
-					<a class="tertiary-button">Button</a>
+					<p>This is a warning notification. Err on the side of caution.</p>
+					<div>
+						<a class="tertiary-button">Button</a>
+						<a class="tertiary-button">Button</a>
+					</div>
 				</div>
+
 			</div>
 
-		</section>
+		</figure>
 
 		<div class="item-descriptor">Error Message</div>
 
-		<section class="error-note">
-		
-			<img src="images/notifications/ban-sign.svg" alt="Failed">
-			<div>
-				<p>This is an error notification. Looks like something went wrong.</p>
+		<figure>
+
+			<div class="error-note">
+			
+				<img src="images/notifications/ban-sign.svg" alt="Failed">
 				<div>
-					<a class="tertiary-button">Button</a>
-					<a class="tertiary-button">Button</a>
+					<p>This is an error notification. Looks like something went wrong.</p>
+					<div>
+						<a class="tertiary-button">Button</a>
+						<a class="tertiary-button">Button</a>
+					</div>
 				</div>
+
 			</div>
 
-		</section>
+		</figure>
 
 	</main>
 

@@ -36,8 +36,12 @@ html {
 	--color-gray-dark: #000;
 	--color-gray-light: #555;
 
+	--primary-border: 2rem;
+
 	background-color: var(--color-beige);
 	color: var(--color-brown-dark);
+
+
 }
 
 /* ==========================================================================
@@ -75,6 +79,8 @@ figure {
 
 }
 
+
+
 /* ==========================================================================
  Typography
 ========================================================================== */
@@ -101,6 +107,8 @@ html {
 
 	font-family: var(--font-primary);
 	line-height: 1.4;
+
+	
 
 }
 
@@ -440,7 +448,7 @@ Modal Dialog Component
 
 dialog {
 	background-color: var(--color-beige);
-	border-radius: 2rem;
+	border-radius: var(--primary-border);
 	border: 1rem solid var(--color-brown);
 	max-width: 80%;
 	padding: 0;
@@ -448,7 +456,7 @@ dialog {
 
  dialog h3 {
  	background-color: var(--color-red);
- 	border-radius: 2rem;
+ 	border-radius: var(--primary-border);
  	color: var(--color-beige-light);
  	margin-top: 0;
  	padding: 2rem 1rem 1rem;
@@ -515,7 +523,7 @@ Forms Component
 form {
 	background-color: var(--color-blue);
 	border: 1rem solid var(--color-blue);
-	border-radius: 2rem;
+	border-radius: var(--primary-border);
 	color: var(--color-brown);
 	margin-top: 1rem;
 }
@@ -639,28 +647,36 @@ Card Components
 /** Recipe Card/ Blog Card **/
 
 .card-post {
-	max-width: 25rem;
+	max-width: 30rem;
 }
 
 .card-cover {
-	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/caramel-pecan-fudge.jpg) no-repeat bottom;
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/caramel-pecan-fudge.jpg) no-repeat center;
 	background-size: cover;
 	border-radius: 2rem 2rem 0 0;
-	padding: 9rem 1rem .5rem 1rem;
+	padding: 10rem .5rem 0 .5rem;
 }
 
-.card-cover h2, .card-cover h6 {
-	padding: 0;
+
+
+.card-cover h3 {
+	font-size: var(--size-subhead-small);
+	padding: 0 .5rem;
 	margin: 0;
+	line-height: 1;
 }
 
 .card-cover h6 {
 	color: var(--color-blue);
+	font-size: var(--size-mini);
+	padding: 0 1rem;
+	margin: 0;
+	text-align: right;
 }
 
 .card-content {
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: row;
 	background-color: var(--color-beige-light);
 }
 
@@ -668,20 +684,20 @@ Card Components
 	text-decoration: none;
 	color: var(--color-beige-light);
 }
+.card-post p {
+	font-size: var(--size-subhead);
+	font-weight: 700;
+	padding: 1rem .5rem;
+}
 
-.card-description {
+.card-links {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 }
 
-.card-links {
-	display: flex;
-	justify-content: space-evenly;
-}
-
-.details, .card-description, .download-post {
-	padding: 1rem;
+.details, .download-post {
+	padding: .5rem;
 }
 
 .details {
@@ -690,71 +706,30 @@ Card Components
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 1rem 5.75rem;
 }
 
 .details:hover {
 	background-color: var(--color-red);
 }
 
-.card-excerpt-title {
-	font-family: var(--font-secondary);
-	font-size: var(--size-subsection);
-	margin: 0;
-}
 
-.download-post a {
+.download-post {
 	display: flex;
 	flex-direction: column;
-}
-
-.details a{
-	display: flex;
 	align-items: center;
 }
 
-.details p, .download-post p {
-	margin: 0;
-}
-
-.details p {
-	padding-left: .5rem;
+.details img, .download img {
+	width: 40px;
 }
 
 .download-post:hover {
 	background-color: var(--color-blue);
 }
 
-@media (min-width: 600px) {
-
-	.card-post {
-		max-width: 45rem;
-	}
-		.card-content {
-		display: flex;
-		flex-direction: row;
-	}
-
-	.card-links {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.details {
-		padding: 1rem;
-	}
-
-	.details p {
-		padding-left: 0;
-	}
-
-	.details a, .download-post a {
-		display: flex;
-		flex-direction: column;
-	}
 
 
-}
+
 
 /**========================== Profile Card ==========================**/
 
@@ -766,6 +741,7 @@ Card Components
 	flex-direction: column-reverse;
 	justify-content: space-between;
 	max-width: 20rem;
+	margin: auto;
 }
 
 .profile-info {
@@ -788,6 +764,7 @@ Card Components
 
 .profile-info img {
 	padding-right: .5rem;
+	width: 20px;
 }
 
 .profile-images {
@@ -799,6 +776,10 @@ Card Components
 	margin: auto;
 }
 
+.profile-headshot {
+	width: 200px;
+}
+
 .social-icons {
 	align-items: center;
 	background-color: var(--color-blue-light);
@@ -808,10 +789,9 @@ Card Components
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: 1500px) {
 	.profile-post {
 		border-radius: 2rem 0 0 2rem;
-		display: flex;
 		flex-direction: row;
 		max-width: 35rem;
 	}
@@ -821,7 +801,6 @@ Card Components
 	}
 
 	.social-icons {
-		display: flex;
 		justify-content: space-between;
 	}
 }
@@ -907,6 +886,91 @@ Notifications
 	}
 }
 
+/* ==========================================================================
+Card Grid Layout
+========================================================================== */
+
+.post-grid {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 1rem;
+	margin: 1rem 0;
+	padding: 1rem;
+	background-color: var(--color-red);
+}
+
+.first-post {
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/fondant-cake.jpg) no-repeat center;
+}
+
+.second-post {
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/baker-brothers.jpg) no-repeat center;
+}
+
+.third-post {
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/red-velvet.jpg) no-repeat center;
+}
+
+.fourth-post {
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/chocolate-covered.jpg) no-repeat left bottom;
+}
+
+.fifth-post {
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/dessert-diet.jpg) no-repeat center;
+}
+
+.sixth-post {
+	background: linear-gradient(to bottom, rgba(255,255,255, 0.0), rgba(255,255,255, 1.0)), url(images/got-cupcakes.jpg) no-repeat center;
+}
+
+
+@media (min-width: 700px){
+	.post-grid {
+	grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 975px) {
+	.post-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 1300px) {
+	.post-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+
+/* ==========================================================================
+Card People Grid Layout
+========================================================================== */
+
+.profile-grid {
+	display: grid;
+	grid-template-columns: repeat(1,1fr);
+	grid-gap: 1rem;
+	margin: 1rem 0;
+	padding: 1rem;
+	background-color: var(--color-blue-dark);
+}
+
+
+@media (min-width: 580px){
+	.profile-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 875px) {
+	.profile-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+}
+
+}
 
 
 /* ==========================================================================
@@ -926,30 +990,46 @@ Notifications
 
 .primary-button-hover {
 	background-color: var(--color-red-dark);
+	border-radius: .9rem;
+	color: var(--color-beige);
+	padding: .7rem 1.5rem;
 }
 
 .primary-button-active, .secondary-button-active, .tertiary-button-active {
 	background-color: var(--color-gold);
+	border-radius: .9rem;
+	color: var(--color-beige);
+	padding: .7rem 1.5rem;
 }
 
 .secondary-button-hover {
 	background-color: var(--color-blue-dark);
+	border-radius: .9rem;
+	color: var(--color-beige);
 	padding: .9rem 1.75rem;
 }
 
 .tertiary-button-hover {
 	background-color: var(--color-brown);
+	border-radius: .9rem;
+	color: var(--color-beige);
+	padding: .7rem 1.5rem;
 }
 
 .primary-button-disabled, .secondary-button-disabled {
 	background-color: var(--color-beige-dark);
+	border-radius: .9rem;
+	color: var(--color-beige);
+	padding: .7rem 1.5rem;
 
 }
 
 .tertiary-button-disabled {
 	border: 3px solid var(--color-beige-dark);
 	background-color: transparent;
+	border-radius: .9rem;
 	color: var(--color-beige-dark);
+	padding: .7rem 1.5rem;
 }
 
 
@@ -975,4 +1055,11 @@ Notifications
 
 .submit-disabled[type=submit] {
 	background-color: var(--color-beige-dark);
+}
+
+
+/** Layout Grid Example **/	
+
+.grid-examples img {
+	max-width: 75%;
 }
